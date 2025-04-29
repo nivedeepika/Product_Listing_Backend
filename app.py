@@ -11,7 +11,8 @@ encoded_password = quote_plus(password)
 
 
 app = Flask(__name__)
-CORS(app, origins=["http://localhost:3000"])
+CORS(app, origins=["http://localhost:3000"], methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"], 
+     allow_headers=["Content-Type", "Authorization", "Access-Control-Allow-Origin"])
 
 # MongoDB setup
 client = MongoClient("mongodb+srv://deepikanivedeepika:Deepika%402003@cluster0.7jhmlxy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
